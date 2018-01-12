@@ -1,0 +1,9 @@
+﻿type project
+id MyPackage
+version 1.0
+authors PM
+description
+  MyPackage
+
+dependencies
+	System.Net.Http ~> LOCKEDVERSION
