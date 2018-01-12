@@ -1,1 +1,2 @@
 source https://api.nuget.org/v3/index.json
+git https://github.com/pmiossec/paket_repro.git master Packages: /Nugets/
