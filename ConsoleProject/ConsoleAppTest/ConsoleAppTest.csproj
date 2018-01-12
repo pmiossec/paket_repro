@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\xunit.core\build\xunit.core.props" Condition="Exists('..\packages\xunit.core\build\xunit.core.props')" Label="Paket" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>1403f5d4-4bc2-4d0f-969b-8ac0fe1d15fa</ProjectGuid>
+    <ProjectGuid>{1403F5D4-4BC2-4D0F-969B-8AC0FE1D15FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConsoleAppTest</RootNamespace>
@@ -45,6 +45,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <PropertyGroup>
+        <__paket__xunit_runner_visualstudio_props>net20\xunit.runner.visualstudio</__paket__xunit_runner_visualstudio_props>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <Import Project="..\packages\xunit.runner.visualstudio\build\$(__paket__xunit_runner_visualstudio_props).props" Condition="Exists('..\packages\xunit.runner.visualstudio\build\$(__paket__xunit_runner_visualstudio_props).props')" Label="Paket" />
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj">
+      <Project>{aed4ceae-256f-4fbc-8bc7-423cdbe0e311}</Project>
+      <Name>ConsoleApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
       <ItemGroup>
