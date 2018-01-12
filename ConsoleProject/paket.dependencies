@@ -5,3 +5,4 @@ git https://github.com/pmiossec/NugetRepo.git master Packages: /Nugets/
 source https://api.nuget.org/v3/index.json
 nuget xunit
 nuget xunit.runner.visualstudio
+nuget PaketReproPackage
